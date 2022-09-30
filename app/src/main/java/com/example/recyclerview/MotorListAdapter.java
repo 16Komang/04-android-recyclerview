@@ -58,9 +58,9 @@ public class MotorListAdapter extends RecyclerView.Adapter<MotorListAdapter.Moto
 
         public MotorViewHolder(View itemView){
             super(itemView);
-            name = itemView.findViewById(R.id.recipe_name);
-            description = itemView.findViewById(R.id.recipe_description);
-            image = itemView.findViewById(R.id.recipe_image);
+            name = itemView.findViewById(R.id.Motor_name);
+            description = itemView.findViewById(R.id.Motor_description);
+            image = itemView.findViewById(R.id.Motor_image);
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
         }
