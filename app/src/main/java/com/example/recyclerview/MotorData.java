@@ -1,12 +1,13 @@
 package com.example.recyclerview;
 
-public class RecipeData {
+public class MotorData {
     private String name;
     private String description;
     private int image;
     private String details;
 
-    public RecipeData(String name, String description, int image, String details){
+
+    public MotorData(String name, String description, int image, String details){
         this.setName(name);
         this.setDescription(description);
         this.setImage(image);

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private final LinkedList mWordList = new LinkedList<String>();
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
-    private ArrayList<RecipeData> recipeList;
+    private ArrayList<MotorData> MotorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,27 +44,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        setRecipeList();
+        setMotorList();
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new WordListAdapter(this, mWordList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecipeListAdapter recipeListAdapter = new RecipeListAdapter(MainActivity.this, recipeList);
+        MotorListAdapter MotorListAdapter = new MotorListAdapter(MainActivity.this, MotorList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        mRecyclerView.setAdapter(recipeListAdapter);
-        recipeListAdapter.setOnItemClickListener(onItemClickListener);
+        mRecyclerView.setAdapter(MotorListAdapter);
+        MotorListAdapter.setOnItemClickListener(onItemClickListener);
     }
-    private void setRecipeList() {
-        recipeList = new ArrayList<>();
-        RecipeData data;
-        data = new RecipeData(getString(R.string.jenis1), getString(R.string.merk1), R.drawable.gambar1, getString(R.string.cc1));
-        recipeList.add(data);
-        data = new RecipeData(getString(R.string.jenis2), getString(R.string.merk2 ), R.drawable.gambar2, getString(R.string.cc2));
-        recipeList.add(data);
-        data = new RecipeData(getString(R.string.jenis3), getString(R.string.merk3 ), R.drawable.gambar3, getString(R.string.cc3));
-        recipeList.add(data);
+    private void setMotorList() {
+        MotorList = new ArrayList<>();
+        MotorData data;
+        data = new MotorData(getString(R.string.jenis1), getString(R.string.merk1), R.drawable.gambar1, getString(R.string.cc1));
+        MotorList.add(data);
+        data = new MotorData(getString(R.string.jenis2), getString(R.string.merk2 ), R.drawable.gambar2, getString(R.string.cc2));
+        MotorList.add(data);
+        data = new MotorData(getString(R.string.jenis3), getString(R.string.merk3 ), R.drawable.gambar3, getString(R.string.cc3));
+        MotorList.add(data);
     }
     public void openDetailActivity(int imageId, String details){
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) v.getTag();
             int position = viewHolder.getAdapterPosition();
-            RecipeData thisRecipe = recipeList.get(position);
-            openDetailActivity(thisRecipe.getImage(), thisRecipe.getDetails());
+            MotorData thisMotor = MotorList.get(position);
+            openDetailActivity(thisMotor.getImage(), thisMotor.getDetails());
         }
     };
     @Override

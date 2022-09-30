@@ -14,8 +14,8 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        ImageView imageView = findViewById(R.id.recipe_image);
-        TextView textView = findViewById(R.id.recipe_details);
+        ImageView imageView = findViewById(R.id.Motor_image);
+        TextView textView = findViewById(R.id.Motor_details);
         //Gets the data that is sent to it from the Main Activity and displays it
         Bundle extras = getIntent().getExtras();
         if (extras != null){
